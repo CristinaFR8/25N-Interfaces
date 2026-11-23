@@ -2,35 +2,37 @@
    tokens.css · Cartel Cuidados 25N
    ========================================================= */
 
+
 /* ---------- Fuentes ---------- */
 
 @font-face {
     font-family: "Blinker";
-    src: url("fonts/Blinker/Blinker-Bold.ttf") format("truetype");
+    src: url("../fonts/Blinker/Blinker-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Inria Serif";
-    src: url("fonts/Inria_Serif/InriaSerif-Regular.ttf") format("truetype");
+    src: url("../fonts/Inria_Serif/InriaSerif-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Inria Serif";
-    src: url("fonts/Inria_Serif/InriaSerif-Bold.ttf") format("truetype");
+    src: url("../fonts/Inria_Serif/InriaSerif-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Inria Sans";
-    src: url("fonts/Inria_Sans/InriaSans-Bold.ttf") format("truetype");
+    src: url("../fonts/Inria_Sans/InriaSans-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
+
 
 
 /* ---------- Variables ---------- */
