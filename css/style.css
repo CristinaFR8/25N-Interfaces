@@ -1,19 +1,68 @@
 /* MOBILE FIRST */
 
-@layer reset, base, estructura, componentes, utilidades;
+@layer reset, tokens, base, estructura, componentes, utilidades;
+@import url("tokens.css") layer tokens;
 
 
 /* Elimina los estilos predeterminados del navegador */
 @layer reset {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
 
+    }
+
+    img {
+        display: block; /* para quitarle el espacio de debajo */
+        max-width: 100%; /* Evita que la img sea mas ancho que su contenedor */
+        height: auto; /* Que su ajuste sea proporcional al ancho de la img */
+    }
 }
 
 /* Estilos generales (fondo, tipografías, colores) */
 @layer base {
-
+    body {
+        font-family: var(--familia); /* establece la tipografia general del pag*/
+        background-color: var(--fondo);
+        color: var(--texto); /* color general del txt*/
+        line-height: 1.4; /* espacio entre cada linea de txt*/
+    }
 }
 
 /* Distribución de elementos Grid y Flexbox */
 @layer estructura {
+    .cartel {
+        display: grid; /* tendra la disposicion de grid en 3 filas*/
+        grid-template-columns: 1fr; /* En una solo columna las 3 filas van a ir una debajo d la otra ya que es la disposicion movil */
+        grid-template-areas:
+            "cabecera"
+            "datos"
+            "pie";
+        gap: var(--esp-m); /* espacio entre cada componente */
+        padding: var(--esp-m);
+    }
+
+    /* Le asignamos cada area a su respectiva etiqueta */
+    .cabecera {
+        grid-area: cabecera;
+    }
+
+    .datos {
+        grid-area: datos;
+    }
+
+    .pie {
+        grid-area: pie;
+    }
+}
+
+/* Aspecto individual de los componentes (cabecera, img...)*/
+@layer componentes {
+
+}
+
+/* Clases auxiliares reutilizables */
+@layer utilidades {
 
 }
