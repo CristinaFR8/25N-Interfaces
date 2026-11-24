@@ -78,6 +78,22 @@
         gap: var(--esp-s);
     }
 
+    .mano {
+        grid-area: mano;
+    }
+
+    .chica {
+        grid-area: chica;
+    }
+
+    .telefono {
+        grid-area: telefono;
+    }
+
+    .fuente {
+        grid-area: fuente;
+    }
+
 }
 
 /* Aspecto individual de los componentes (cabecera, img...)*/
