@@ -1,0 +1,19 @@
+/* MOBILE FIRST */
+
+@layer reset, base, estructura, componentes, utilidades;
+
+
+/* Elimina los estilos predeterminados del navegador */
+@layer reset {
+
+}
+
+/* Estilos generales (fondo, tipografías, colores) */
+@layer base {
+
+}
+
+/* Distribución de elementos Grid y Flexbox */
+@layer estructura {
+    
+}
