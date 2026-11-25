@@ -14,33 +14,45 @@
     }
 
     img {
-        display: block; /* para quitarle el espacio de debajo */
-        max-width: 100%; /* Evita que la img sea mas ancho que su contenedor */
-        height: auto; /* Que su ajuste sea proporcional al ancho de la img */
+        display: block;
+        /* para quitarle el espacio de debajo */
+        max-width: 100%;
+        /* Evita que la img sea mas ancho que su contenedor */
+        height: auto;
+        /* Que su ajuste sea proporcional al ancho de la img */
     }
 }
 
 /* Estilos generales (fondo, tipografías, colores) */
 @layer base {
     body {
-        font-family: var(--familia); /* establece la tipografia general del pag*/
+        font-family: var(--familia);
+        /* establece la tipografia general del pag*/
         background-color: var(--fondo);
-        color: var(--texto); /* color general del txt*/
-        line-height: 1.4; /* espacio entre cada linea de txt*/
+        color: var(--texto);
+        /* color general del txt*/
+        line-height: 1.4;
+        /* espacio entre cada linea de txt*/
     }
 }
 
 /* Distribución de elementos Grid y Flexbox */
 @layer estructura {
     .cartel {
-        display: grid; /* tendra la disposicion de grid en 3 filas*/
-        grid-template-columns: 1fr; /* En una solo columna las 3 filas van a ir una debajo d la otra ya que es la disposicion movil */
+        display: grid;
+        /* tendra la disposicion de grid en 3 filas*/
+        grid-template-columns: 1fr;
+        /* En una solo columna las 3 filas van a ir una debajo d la otra ya que es la disposicion movil */
         grid-template-areas:
             "cabecera"
             "datos"
             "pie";
-        gap: var(--esp-m); /* espacio entre cada componente */
+        gap: var(--esp-m);
+        /* espacio entre cada componente */
         padding: var(--esp-m);
+
+        /* Ocupa como mínimo toda la altura de la pantalla */
+        min-height: 100vh;
     }
 
     /* Le asignamos cada area a su respectiva etiqueta */
@@ -53,7 +65,8 @@
 
     .iconos {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* dispone las img en 3 columnas iguales*/
+        grid-template-columns: repeat(3, 1fr);
+        /* dispone las img en 3 columnas iguales*/
         align-items: center;
         justify-items: center;
         gap: var(--esp-s);
@@ -71,7 +84,7 @@
         grid-area: pie;
         display: grid;
         grid-template-columns: 3fr 2fr;
-        grid-template-areas: 
+        grid-template-areas:
             "mano   chica"
             "telefono   chica"
             "fuente     chica";
@@ -84,6 +97,9 @@
 
     .chica {
         grid-area: chica;
+        align-self: end;
+        justify-self: start;
+        margin-bottom: calc(-1 * var(--esp-m));
     }
 
     .telefono {
@@ -99,9 +115,105 @@
 /* Aspecto individual de los componentes (cabecera, img...)*/
 @layer componentes {
 
+    /* Texto superior de la cabecera */
+    .cabecera p {
+        font-family: var(--familia-cabecera);
+        font-size: var(--tam-cabecera);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /* Imágenes de la cabecera */
+    .iconos img {
+        width: 100%;
+        max-width: 120px;
+        height: auto;
+    }
+
+    /* Titular principal */
+    .datos h1 {
+        font-family: var(--familia-titular);
+        font-size: var(--tam-titular);
+        font-weight: 700;
+        text-align: center;
+        background-color: var(--fondo-cifra);
+        border-radius: 1rem;
+        padding: var(--esp-m);
+        line-height: 1.1;
+    }
+
+    /* Porcentaje destacado */
+    .datos h1 span {
+        color: var(--destacado);
+    }
+
+    /* Párrafo explicativo del dato */
+    .datos p {
+        font-family: var(--familia-titular);
+        font-size: var(--tam-texto);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /* Eslogan del cartel */
+    .datos h2 {
+        font-family: var(--familia-lema);
+        font-size: var(--tam-lema);
+        font-weight: 700;
+        color: var(--destacado);
+        text-align: center;
+    }
+
+    /* Imagen de la mano 25N */
+    .mano {
+        width: 100%;
+        border-radius: 5rem;
+    }
+
+    /* Ilustración de la mujer */
+    .chica {
+        width: calc(100% + var(--esp-m));
+        max-width: none;
+    }
+
+    /* Texto del teléfono de ayuda */
+    .telefono {
+        font-family: var(--familia);
+        font-size: var(--tam-telefono);
+        font-weight: 400;
+    }
+
+    /* Número de ayuda destacado */
+    .telefono strong {
+        font-family: var(--familia-titular);
+        font-size: var(--tam-016);
+        font-weight: 700;
+    }
+
+    /* Fuente de los datos */
+    .fuente {
+        font-family: var(--familia);
+        font-size: var(--tam-nota);
+        font-weight: 400;
+    }
+
+    /* Etiqueta de la fuente en negrita */
+    .fuente strong {
+        font-family: var(--familia-titular);
+        font-weight: 700;
+    }
+
+    /* Enlace a la fuente oficial */
+    .fuente a {
+        color: var(--texto);
+        text-decoration: underline;
+    }
+
+
 }
+
+
+
 
 /* Clases auxiliares reutilizables */
-@layer utilidades {
-
-}
+@layer utilidades {}
