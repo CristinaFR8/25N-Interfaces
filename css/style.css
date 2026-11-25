@@ -53,6 +53,12 @@
 
         /* Ocupa como mínimo toda la altura de la pantalla */
         min-height: 100vh;
+
+        /* Limita el ancho máximo del cartel */
+        max-width: 800px;
+
+        /* Centra horizontalmente el cartel */
+        margin-inline: auto;
     }
 
     /* Le asignamos cada area a su respectiva etiqueta */
@@ -108,6 +114,12 @@
 
     .fuente {
         grid-area: fuente;
+    }
+
+    /* Adaptación a tablets y ordenadores */
+    @media (min-width: 768px) {
+        .cartel {
+            max-width: 1000px;
     }
 
 }
@@ -209,10 +221,7 @@
         text-decoration: underline;
     }
 
-
 }
-
-
 
 
 /* Clases auxiliares reutilizables */
