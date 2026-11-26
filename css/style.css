@@ -6,7 +6,9 @@
 
 /* Elimina los estilos predeterminados del navegador */
 @layer reset {
-    * {
+    *,
+    *::before,
+    *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -49,13 +51,11 @@
             "pie";
         gap: var(--esp-m);
         /* espacio entre cada componente */
-        padding: var(--esp-m);
+        padding-block-start: 2rem;
+        padding-inline: 2rem;
 
         /* Ocupa como mínimo toda la altura de la pantalla */
         min-height: 100vh;
-
-        /* Limita el ancho máximo del cartel */
-        max-width: 800px;
 
         /* Centra horizontalmente el cartel */
         margin-inline: auto;
@@ -91,6 +91,7 @@
         display: grid;
         grid-template-columns: 3fr 2fr;
         grid-template-areas:
+            "cuidar cuidar"
             "mano   chica"
             "telefono   chica"
             "fuente     chica";
@@ -105,8 +106,15 @@
         grid-area: chica;
         align-self: end;
         justify-self: start;
-        margin-bottom: calc(-1 * var(--esp-m));
+        margin-bottom: 0;
     }
+
+    .cuidar {
+            color: var(--destacado);
+            size: var(--tam-lema);
+            font-family: var(--familia-lema);
+            text-align: center;
+        }
 
     .telefono {
         grid-area: telefono;
@@ -118,9 +126,40 @@
 
     /* Adaptación a tablets y ordenadores */
     @media (min-width: 768px) {
-        .cartel {
-            max-width: 1000px;
-    }
+        .mano {
+            max-width: 60%;
+            max-height: auto;
+            border-radius: 80%;
+        }
+
+        .pie {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            grid-template-areas:
+            "cuidar chica"
+            "mano   chica"
+            "telefono   telefono"
+            "fuente     fuente";
+
+            
+        }
+
+        .cuidar {
+            color: var(--destacado);
+            size: var(--tam-lema);
+            font-family: var(--familia-lema);
+            text-align: end;
+        }
+
+        .chica{
+            justify-content: end;
+            
+            width: 5rem;
+
+            max-width: 35%; 
+            max-height: auto;
+
+        }
 
 }
 }
@@ -200,6 +239,7 @@
     .telefono strong {
         font-family: var(--familia-titular);
         font-size: var(--tam-016);
+        color: var(--destacado);
         font-weight: 700;
     }
 

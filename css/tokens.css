@@ -59,7 +59,7 @@
 
     --tam-cifra:      clamp(2.5rem, 10vw, 5.3125rem);
     --tam-titular:    clamp(2.5rem, 4vw, 2.5rem);
-    --tam-lema: clamp(1.5rem, 4vw, 2.5rem);
+    --tam-lema: clamp(1.75rem, 4vw, 2.5rem);
     --tam-texto:      clamp(1.125rem, 3vw, 2.1875rem);
     --tam-nota:       1.125rem;
     --tam-cabecera:   1.25rem;
